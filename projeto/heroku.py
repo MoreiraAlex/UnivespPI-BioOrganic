@@ -1,5 +1,5 @@
 import environ
-from . import settings
+from .settings import *
 
 env = environ.Env()
 
