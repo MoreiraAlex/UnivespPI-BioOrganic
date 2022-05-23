@@ -1,5 +1,5 @@
 import environ
-import projeto.settings.base
+from . import settings
 
 env = environ.Env()
 
