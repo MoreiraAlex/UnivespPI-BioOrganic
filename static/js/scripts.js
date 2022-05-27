@@ -12,11 +12,12 @@ window.onload = function () {
 };
 
 function scrollFunction() {
-	if (document.documentElement.scrollTop > 30) {
+	//document.getElementById("navbar").classList.add("top-nav-collapse");
+	/*if (document.documentElement.scrollTop > 30) {
 		document.getElementById("navbar").classList.add("top-nav-collapse");
 	} else if ( document.documentElement.scrollTop < 30 ) {
 		document.getElementById("navbar").classList.remove("top-nav-collapse");
-	}
+	}*/
 }
 
 // Navbar on mobile
@@ -72,7 +73,7 @@ if (dropdownCheck !== null) {
   
 
 /* Card Slider - Swiper */
-var cardSlider = new Swiper('.card-slider', {
+/*var cardSlider = new Swiper('.card-slider', {
 	autoplay: {
 		delay: 4000,
 		disableOnInteraction: false
@@ -82,11 +83,11 @@ var cardSlider = new Swiper('.card-slider', {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev'
 	}
-});
+});*/
 
 
 /* Filter - Isotope */
-const gridCheck = document.querySelector('.grid');
+/*const gridCheck = document.querySelector('.grid');
 
 if (gridCheck !== null) { 
 	// init Isotope
@@ -124,7 +125,7 @@ if (gridCheck !== null) {
 			event.target.classList.add('is-checked');
 		});
 	}
-}
+}*/
 
 
 /* Back To Top Button */

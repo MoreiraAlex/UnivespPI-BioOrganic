@@ -5,4 +5,5 @@ app_name = 'bio'
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('manun', views.manun, name='manutenção'),
 ]
