@@ -5,12 +5,18 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-    <h2>Entrar</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form|crispy }}
-        <button class="btn btn-success" type="submit">Casdastrar</button>
-    </form>
+    <div class="custom-signup">
+        <div class="custom-signup-form">
+            <h2>Bem vindo</h2>
+            <p>Preencha os campos abaixo para realizar seu cadastro!</p>
+            <form method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button class="btn btn-success" type="submit">Cadastrar</button>
+            </form>
+            <p>Ja tem conta? <a href="../login">Entre aqui</a></p>
+        </div>
+    </div>
 {% endblock %}
 
 

@@ -1,0 +1,55 @@
+/**********************/
+/*     Navigation     */
+/**********************/
+
+.navbar .nav-user{
+    display: flex;
+    margin-left: 2em;
+}
+
+.navbar .nav-item form button{
+	padding-top: 0.625rem;
+	padding-bottom: 0.625rem;
+	color: #ffffff8c;
+	text-decoration: none;
+	transition: all 0.2s ease;
+    border: none;
+    background-color: #161223;
+	font-weight: 600;
+	font-size: 0.875rem;
+}
+
+
+
+
+
+
+
+/**********************/
+/*   signup/signin    */
+/**********************/
+.custom-signup{
+    display: flex;
+    justify-content: center;
+}
+
+.custom-signup img{
+    width: 50%;
+    padding: 5%;
+}
+
+.custom-signup-form h2{
+    margin-bottom: 1em;
+}
+
+.custom-signup-form{
+    align-items: center;
+    margin: 3rem 0;
+}
+
+.custom-signup-form form{
+    border: 1px solid #212529;
+    box-shadow: 2px 2px 4px #21252967;
+    background-color: #2125291e;
+    padding: 5% 10%;
+}
