@@ -11,8 +11,9 @@ class UserAdmin(auth_admin.UserAdmin):
     
     fieldsets = (
         ('Contato', {'fields': ('Telefone', 'Instagram',)}),
-        ('Endereço', {'fields': ('CEP', 'Estado', 'Cidade', 'Bairro', 'Endereço', 'Numero', 'Complemento')}),
+        ('Endereço', {'fields': ('CEP', 'Estado', 'Cidade', 'Bairro', 'Endereço', 'Numero', 'Complemento',)}),
         #('Descarte', {'fields': ('discard', 'time',)})
+        ('Cadastro', {'fields': ('Completo',)}),
     ) + auth_admin.UserAdmin.fieldsets
 
     list_display = ('username', 'email', 'first_name', 'is_active', 'is_staff')

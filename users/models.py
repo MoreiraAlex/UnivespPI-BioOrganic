@@ -2,7 +2,6 @@ from email.policy import default
 from statistics import mode
 from django.contrib.auth.models import AbstractUser
 from django.db import models
-from django import forms
 
 class User(AbstractUser):
     cep = models.CharField(name='CEP', max_length=9, default= '')
@@ -12,7 +11,7 @@ class User(AbstractUser):
     address = models.CharField(name='Endereço', max_length=50, default= '')
     number = models.CharField(name='Numero', max_length=10, default= '')
     complement = models.CharField(name='Complemento', max_length=30, default= '', blank=True)
-    phone = models.CharField(name='Telefone', max_length=14, default= 0)
+    phone = models.CharField(name='Telefone', max_length=14, default= '')
     insta = models.CharField(name='Instagram', max_length=30, default= '', blank=True)
     descard = models.BooleanField( name='Realiza descarte de óleo frequentemente?', default=False, choices=[
         (True, 'Sim'),

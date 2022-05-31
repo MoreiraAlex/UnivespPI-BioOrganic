@@ -39,3 +39,25 @@ class Full_signup(forms.ModelForm):
             'email',
             'full',
         ]
+
+class DataForm(forms.ModelForm):
+    class Meta():
+        model = User
+
+        fields = Full_signup().fields
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)  
+        self.fields['first_name'].widget.attrs.update({'disabled': ''})    
+        self.fields['last_name'].widget.attrs.update({'disabled': ''})    
+        self.fields['Estado'].widget.attrs.update({'disabled': ''})    
+        self.fields['Cidade'].widget.attrs.update({'disabled': ''})    
+        self.fields['Bairro'].widget.attrs.update({'disabled': ''})    
+        self.fields['Endereço'].widget.attrs.update({'disabled': ''})    
+        self.fields['Numero'].widget.attrs.update({'disabled': ''})    
+        self.fields['Complemento'].widget.attrs.update({'disabled': ''})    
+        self.fields['Telefone'].widget.attrs.update({'disabled': ''})    
+        self.fields['Instagram'].widget.attrs.update({'disabled': ''})    
+        self.fields['Realiza descarte de óleo frequentemente?'].widget.attrs.update({'disabled': ''})    
+        self.fields['Se sim, a cada quanto tempo?'].widget.attrs.update({'disabled': ''})    
+        self.fields['CEP'].widget.attrs.update({'disabled': ''})

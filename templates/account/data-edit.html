@@ -10,7 +10,8 @@
         <h2 class="data-title">Seus dados</h2>
         {% csrf_token %}
         {{ form|crispy }}
-        <a href="/accounts/data-edit/{{ user.id }}"><button class="btn btn-success" type="button">Editar</button></a>
+        <button class="btn btn-success" type="submit">Salvar</button>
+        <a href="/accounts/data/{{ user.id }}"><button class="btn btn-success" type="button">Cancelar</button></a>
     </form>
 </div>
 {% endblock %}

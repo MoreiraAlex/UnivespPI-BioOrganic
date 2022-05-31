@@ -5,5 +5,6 @@ app_name = 'users'
 
 urlpatterns = [
     path('profile', views.profile, name='profile'),
-    path('data/<int:id>/', views.data, name='data'),
+    path('data/<int:id>/', views.view_data, name='data'),
+    path('data-edit/<int:id>/', views.edit_data, name='data-edit'),
 ]
