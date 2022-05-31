@@ -1,13 +1,5 @@
-from cProfile import label
-from logging import PlaceHolder
-from pyexpat import model
-from secrets import choice
-from tkinter.tix import Select
-from unicodedata import name
-from allauth.account.forms import SignupForm
 from django import forms
 from django.contrib.auth import forms as auth_forms
-from allauth.account.adapter import get_adapter
 
 from users.models import User
  
