@@ -7,7 +7,7 @@ class UserChangeForm(auth_forms.UserChangeForm):
     class Meta(auth_forms.UserChangeForm.Meta):
         model = User
 
-class Full_signup(forms.ModelForm):
+class DataFormEdit(forms.ModelForm):
     class Meta:
         model = User
         fields = [
@@ -36,7 +36,7 @@ class DataForm(forms.ModelForm):
     class Meta():
         model = User
 
-        fields = Full_signup().fields
+        fields = DataFormEdit().fields
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)  

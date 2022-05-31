@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 
-from .forms import DataForm, Full_signup
+from .forms import DataForm, DataFormEdit
 from .models import User
 
 def profile(request):
@@ -19,10 +19,10 @@ def view_data(request, id):
 
 def edit_data(request, id):
     user = get_object_or_404(User, pk=id)
-    form = Full_signup(instance=user)
+    form = DataFormEdit(instance=user)
 
     if request.method == 'POST':
-        form = Full_signup(request.POST, instance=user)
+        form = DataFormEdit(request.POST, instance=user)
 
         if form.is_valid():
             user.Completo = True
