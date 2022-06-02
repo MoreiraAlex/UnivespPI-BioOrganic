@@ -1,6 +1,6 @@
 // CEP
 
-$("#id_CEP").blur(function(){
+$("#id_cep").blur(function(){
     // Remove tudo o que não é número para fazer a pesquisa
     var cep = this.value.replace(/[^0-9]/, "");
     
@@ -22,10 +22,10 @@ $("#id_CEP").blur(function(){
     $.getJSON(url, function(dadosRetorno){
         try{
             // Preenche os campos de acordo com o retorno da pesquisa
-            $("#id_Endereço").val(dadosRetorno.logradouro);
-            $("#id_Bairro").val(dadosRetorno.bairro);
-            $("#id_Cidade").val(dadosRetorno.localidade);
-            $("#id_Estado").val(dadosRetorno.uf);
+            $("#id_address").val(dadosRetorno.logradouro);
+            $("#id_block").val(dadosRetorno.bairro);
+            $("#id_city").val(dadosRetorno.localidade);
+            $("#id_uf").val(dadosRetorno.uf);
         }catch(ex){}
     });
 });

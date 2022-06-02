@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="nav-profile">
+        <div id="list-example" class="list-group nav-profile-group">
+            <h3 class="list-group-item">
+                {% if user.first_name %}
+                    {{ user.first_name }}
+                {% else %}
+                    {{ user.username }}
+                {% endif %}
+            </h3>
+            <a class="list-group-item list-group-item-action" href="/collect/info">Informações</a>
+            <a class="list-group-item list-group-item-action" href="/collect/collect">Coletas concluidas</a>
+            <a class="list-group-item list-group-item-action" href="#">Coletas pendentes</a>
+            <a class="list-group-item list-group-item-action" href="#">Coletas aprovadas</a>
+            <a class="list-group-item list-group-item-action" href="#">Coletas recusadas</a>
+        </div>
+        <div class="profile-content">
+            {% block content_profile %}
+            {% endblock %}
+        </div>    
+    </div>    
+{% endblock %}

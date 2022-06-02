@@ -10,10 +10,10 @@ class UserAdmin(auth_admin.UserAdmin):
     model = User
     
     fieldsets = (
-        ('Contato', {'fields': ('Telefone', 'Instagram',)}),
-        ('Endereço', {'fields': ('CEP', 'Estado', 'Cidade', 'Bairro', 'Endereço', 'Numero', 'Complemento',)}),
-        #('Descarte', {'fields': ('discard', 'time',)})
-        ('Cadastro', {'fields': ('Completo',)}),
+        ('Contato', {'fields': ('phone', 'insta',)}),
+        ('Endereço', {'fields': ('cep', 'uf', 'city', 'block', 'address', 'number', 'complement',)}),
+        ('Descarte', {'fields': ('descard', 'time',)}),
+        ('Cadastro', {'fields': ('full',)}),
     ) + auth_admin.UserAdmin.fieldsets
 
     list_display = ('username', 'email', 'first_name', 'is_active', 'is_staff')

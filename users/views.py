@@ -25,7 +25,7 @@ def edit_data(request, id):
         form = DataFormEdit(request.POST, instance=user)
 
         if form.is_valid():
-            user.Completo = True
+            user.full = True
             user.save()
             return redirect('/accounts/data/' + str(id))
         else:

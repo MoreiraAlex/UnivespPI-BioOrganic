@@ -13,18 +13,19 @@ class DataFormEdit(forms.ModelForm):
         fields = [
             'first_name',
             'last_name',
-            'CEP',
-            'Estado',
-            'Cidade',
-            'Bairro',
-            'Endereço',
-            'Numero',
-            'Complemento',
-            'Telefone',
-            'Instagram',
-            'Realiza descarte de óleo frequentemente?',
-            'Se sim, a cada quanto tempo?',
+            'cep',
+            'uf',
+            'city',
+            'block',
+            'address',
+            'number',
+            'complement',
+            'phone',
+            'insta',
+            'descard',
+            'time',
         ]
+
         exclude = [
             'password',
             'username',
@@ -41,15 +42,16 @@ class DataForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)  
         self.fields['first_name'].widget.attrs.update({'disabled': ''})    
+        self.fields['first_name'].required = True  
         self.fields['last_name'].widget.attrs.update({'disabled': ''})    
-        self.fields['Estado'].widget.attrs.update({'disabled': ''})    
-        self.fields['Cidade'].widget.attrs.update({'disabled': ''})    
-        self.fields['Bairro'].widget.attrs.update({'disabled': ''})    
-        self.fields['Endereço'].widget.attrs.update({'disabled': ''})    
-        self.fields['Numero'].widget.attrs.update({'disabled': ''})    
-        self.fields['Complemento'].widget.attrs.update({'disabled': ''})    
-        self.fields['Telefone'].widget.attrs.update({'disabled': ''})    
-        self.fields['Instagram'].widget.attrs.update({'disabled': ''})    
-        self.fields['Realiza descarte de óleo frequentemente?'].widget.attrs.update({'disabled': ''})    
-        self.fields['Se sim, a cada quanto tempo?'].widget.attrs.update({'disabled': ''})    
-        self.fields['CEP'].widget.attrs.update({'disabled': ''})
+        self.fields['cep'].widget.attrs.update({'disabled': ''})
+        self.fields['uf'].widget.attrs.update({'disabled': ''})    
+        self.fields['city'].widget.attrs.update({'disabled': ''})    
+        self.fields['block'].widget.attrs.update({'disabled': ''})    
+        self.fields['address'].widget.attrs.update({'disabled': ''})    
+        self.fields['number'].widget.attrs.update({'disabled': ''})    
+        self.fields['complement'].widget.attrs.update({'disabled': ''})    
+        self.fields['phone'].widget.attrs.update({'disabled': ''})    
+        self.fields['insta'].widget.attrs.update({'disabled': ''})    
+        self.fields['descard'].widget.attrs.update({'disabled': ''})    
+        self.fields['time'].widget.attrs.update({'disabled': ''})    
