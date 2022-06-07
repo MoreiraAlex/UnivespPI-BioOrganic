@@ -1,3 +1,4 @@
+from django import forms
 from django.forms import ModelForm
 
 from collect.models import Collect
@@ -15,7 +16,17 @@ class CollectForm(ModelForm):
             'address',
             'number',
             'complement',
-            'img',
             'date',
+            'time',
+            'img',
+        ]
+        exclude = [
+            'username',
+            'created',
+            'status',
+            'obs',
         ]
            
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)  
+        self.fields['date'].widget=forms.widgets.DateInput(attrs={'type': 'date'})

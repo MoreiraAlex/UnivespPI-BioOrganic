@@ -1,0 +1,205 @@
+{% extends 'base.html' %}
+
+{% block title %}Entrar{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="collect-base">
+
+        
+        <div class="collect-header">
+
+            <h1>
+                {% if user.first_name %}
+                    {{ user.first_name }}
+                {% else %}
+                    {{ user.username }}
+                {% endif %}
+            </h1>
+
+            <div class="collect-lts">
+                <div class="lts-number">{{ oilLiters }} Litros</div>
+                <div class="lts-info">Óleo reciclado</div>
+            </div>
+
+        </div>
+        
+        <div class="accordion collect-accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                        Antes de cadastrar o óleo usado disponível, atente-se aos requerimentos
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                    <div class="accordion-body">
+                        <ol>
+                            <li>Guarde o seu óleo num recipiente TRANSPARENTE de qualquer capacidade (1 litro), (2 litros), (3litros), ETC. De preferência numa garrafa pet.</li>
+                            <li>Retire a etiqueta da garrafa pet, posicione ela de pé num local iluminado e tire uma foto na vertical a uma distância de 1 m. Esta foto deve permitir enxergar o conteúdo da garrafa.</li>
+                        </ol> 
+                        <p><strong>Observação: Só serão validados os cadastros que cumpram com estas condições.</strong></p> 
+                        <img src="..." alt="ilustração de como preparar o resíduo">            
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="collect-button"><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Cadastre o seu resíduo</button></div>
+        <div class="col-md-2">
+            <div class="row">
+            </div>
+        </div>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <form method="POST">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        {% csrf_token %}
+                        {{ form|crispy }}
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button class="btn btn-primary" type="submit" value="Nova Coleta">Salvar</button>
+                    </div>
+                </form>
+            </div>
+            </div>
+        </div>
+
+
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="pending-tab" data-bs-toggle="tab" data-bs-target="#pending-tab-pane" type="button" role="tab" aria-controls="pending-tab-pane" aria-selected="true">Pendentes</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="approved-tab" data-bs-toggle="tab" data-bs-target="#approved-tab-pane" type="button" role="tab" aria-controls="approved-tab-pane" aria-selected="false">Aprovadas</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="failed-tab" data-bs-toggle="tab" data-bs-target="#failed-tab-pane" type="button" role="tab" aria-controls="failed-tab-pane" aria-selected="false">Reprovadas</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="completed-tab" data-bs-toggle="tab" data-bs-target="#completed-tab-pane" type="button" role="tab" aria-controls="completed-tab-pane" aria-selected="false">Concluidas</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="canceled-tab" data-bs-toggle="tab" data-bs-target="#canceled-tab-pane" type="button" role="tab" aria-controls="canceled-tab-pane" aria-selected="false">Canceladas</button>
+            </li>
+          </ul>
+          
+        
+          
+          <div class="tab-content collect-area" id="myTabContent">
+              
+            <div class="tab-pane fade show active" id="pending-tab-pane" role="tabpanel" aria-labelledby="pending-tab" tabindex="0">
+                {% for collect in collections %}
+                {{ collect.username }}
+                    {% if '1' == '1' %}
+                        {% if collect.status == 'Pendente' %}
+                            <div class="card collect-card">
+                                <a href="" class="collect-card-link">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ collect.liters }} litros</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">#{{ collect.id }}</h6>
+                                        <p class="card-text">{{ collect.address }} {{ collect.number }}, {{ collect.block }}, {{ collect.city }} - {{ collect.uf }}</p>
+                                        <div class="text-muted">{{ collect.date }}</div>
+                                        <div class="text-muted">{{ collect.time }}</div>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="tab-pane fade" id="approved-tab-pane" role="tabpanel" aria-labelledby="approved-tab" tabindex="0">
+                {% for collect in collections %}
+                    {% if '1' == '1' %}
+                        {% if collect.status == 'Aprovada' %}
+                            <div class="card collect-card">
+                                <a href="" class="collect-card-link">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ collect.liters }} litros</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">#{{ collect.id }}</h6>
+                                        <p class="card-text">{{ collect.address }} {{ collect.number }}, {{ collect.block }}, {{ collect.city }} - {{ collect.uf }}</p>
+                                        <div class="text-muted">{{ collect.date }}</div>
+                                        <div class="text-muted">{{ collect.time }}</div>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="tab-pane fade" id="failed-tab-pane" role="tabpanel" aria-labelledby="failed-tab" tabindex="0">
+                {% for collect in collections %}
+                    {% if '1' == '1' %}
+                        {% if collect.status == 'Reprovada' %}
+                            <div class="card collect-card">
+                                <a href="" class="collect-card-link">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ collect.liters }} litros</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">#{{ collect.id }}</h6>
+                                        <p class="card-text">{{ collect.address }} {{ collect.number }}, {{ collect.block }}, {{ collect.city }} - {{ collect.uf }}</p>
+                                        <div class="text-muted">{{ collect.date }}</div>
+                                        <div class="text-muted">{{ collect.time }}</div>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="tab-pane fade" id="completed-tab-pane" role="tabpanel" aria-labelledby="completed-tab" tabindex="0">
+                {% for collect in collections %}
+                    {% if '1' == '1' %}
+                        {% if collect.status == 'Concluida' %}
+                            <div class="card collect-card">
+                                <a href="" class="collect-card-link">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ collect.liters }} litros</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">#{{ collect.id }}</h6>
+                                        <p class="card-text">{{ collect.address }} {{ collect.number }}, {{ collect.block }}, {{ collect.city }} - {{ collect.uf }}</p>
+                                        <div class="text-muted">{{ collect.date }}</div>
+                                        <div class="text-muted">{{ collect.time }}</div>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="tab-pane fade" id="canceled-tab-pane" role="tabpanel" aria-labelledby="canceled-tab" tabindex="0">
+                {% for collect in collections %}
+                    {% if '1' == '1' %}
+                        {% if collect.status == 'Cancelada' %}
+                            <div class="card collect-card">
+                                <a href="" class="collect-card-link">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ collect.liters }} litros</h5>
+                                        <h6 class="card-subtitle mb-2 text-muted">#{{ collect.id }}</h6>
+                                        <p class="card-text">{{ collect.address }} {{ collect.number }}, {{ collect.block }}, {{ collect.city }} - {{ collect.uf }}</p>
+                                        <div class="text-muted">{{ collect.date }}</div>
+                                        <div class="text-muted">{{ collect.time }}</div>
+                                    </div>
+                                </a>
+                            </div>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+          </div>
+    </div>
+    
+{% endblock %}
+
+

@@ -76,3 +76,63 @@
 .profile-content .data form{
     margin-bottom: 15%;
 }
+
+/**********************/
+/*       Collect      */
+/**********************/
+
+.collect-base {
+    margin: 3%;
+}
+
+.collect-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 4%;
+}
+
+.collect-lts {
+    text-align: center;
+}
+
+.collect-lts .lts-number {
+	margin-bottom: 1rem;
+	color: #161223;
+	font-weight: 600;
+	font-size: 3.5rem;
+	line-height: 3rem;
+}
+
+.collect-lts .lts-info {
+	color: #161223;
+	font-size: 0.875rem;
+	line-height: 1.5rem;
+}
+
+.collect-accordion{
+    margin-bottom: 2%;
+}
+
+.collect-button{
+    display: flex;
+    justify-content: end;
+}
+
+.collect-area {
+    padding: 2%;
+    border: rgba(0,0,0,.125) solid 1px;
+    border-top: none;
+    border-radius: 5px;
+}
+
+.collect-card{
+    margin: 0.8% 0;
+}
+
+.collect-card-link{
+    text-decoration: none;
+}
+.collect-card-link:hover{
+    text-decoration: none;
+}
