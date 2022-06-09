@@ -136,3 +136,46 @@
 .collect-card-link:hover{
     text-decoration: none;
 }
+
+/**********************/
+/*  Collect Details   */
+/**********************/
+
+.collect-base .card-body-collect{
+    display: flex;
+    justify-content: space-around;
+}
+
+.collect-base .card-body-collect .card-content-collect{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+    align-content: center;
+}
+
+.collect-base .card-body-collect .card-content-collect .card-text-first{
+    display: flex;
+}
+
+.collect-base .card-body-collect .card-content-collect .card-text-first p{
+    margin: 0 1.1rem;
+}
+
+.collect-base .card-footer-collect{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.collect-base .card-body-collect .card-content-collect .card-text-second{
+    display: flex;
+    justify-content: space-around;
+    align-content: stretch;
+    align-items: center;
+}
+
+.collect-base .card-body-collect .card-content-collect .card-text-second .obs{
+    width: 120px;
+}

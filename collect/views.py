@@ -11,15 +11,15 @@ def collect(request):
     for i in users:
         user = i
 
-    collections = Collect.objects.all().order_by('-created').filter(user = user)
+    collections = Collect.objects.all().filter(user = user).order_by('-created')
 
     oilLiters = 0
     for i in collections:
-        if i.status == 'Aprovada':
-            oilLiters += i.liters
+        if i.status == 'Concluida':
+            oilLiters += i.real_liters
 
     if request.method == 'POST':
-        form = CollectForm(request.POST)
+        form = CollectForm(request.POST, request.FILES)
 
         if form.is_valid():
             collect = form.save(commit=False)
@@ -29,5 +29,30 @@ def collect(request):
             return redirect('/collect')
         else:
             return render(request, 'collect/collect.html', {'form': form, 'collections': collections, 'oilLiters': oilLiters})
+    
     else:
         return render(request, 'collect/collect.html', {'form': form, 'collections': collections, 'oilLiters': oilLiters})
+
+
+def collectDetails(request, id):
+    collect = get_object_or_404(Collect, pk=id)
+    form = CollectForm(instance=collect)
+
+    if request.method == 'POST':
+        form = CollectForm(request.POST, request.FILES, instance=collect)
+ 
+        if form.is_valid():
+            collect = form.save()
+            return redirect('/collect/' + str(id))
+        else:
+            return render(request, 'collect/collect_details.html', {'form': form, 'collect': collect})
+
+    else:
+        return render(request, 'collect/collect_details.html', {'form': form, 'collect': collect})
+
+def collectCancel(request, id):
+    collect = get_object_or_404(Collect, pk=id)
+    print('entrou')
+    collect.status = 'Cancelada'
+    collect.save()
+    return redirect('/collect/' + str(id))

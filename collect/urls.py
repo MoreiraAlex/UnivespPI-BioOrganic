@@ -5,5 +5,6 @@ app_name = 'collect'
 
 urlpatterns = [
     path('', views.collect, name='collect'),
-    #path('data/<int:id>/', views.view_data, name='data'),
+    path('<int:id>', views.collectDetails, name='collectDetails'),
+    path('cancel/<int:id>', views.collectCancel, name='collectCancel'),
 ]

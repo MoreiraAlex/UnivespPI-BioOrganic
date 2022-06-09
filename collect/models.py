@@ -14,11 +14,11 @@ class Collect(models.Model):
     number = models.CharField(verbose_name='Numero', max_length=10, default= '')
     complement = models.CharField(verbose_name='Complemento', max_length=30, default= '', blank=True)
     date = models.DateField(verbose_name='Data da coleta', default=datetime.now)
-    time = models.CharField(max_length=10, verbose_name='Horario da coleta', default='', choices=[
-        ('morning','8:00hrs - 12:00hrs'),
-        ('afternon', '13:00hrs - 18:00hrs'),
+    time = models.CharField(max_length=20, verbose_name='Horario da coleta', default='', choices=[
+        ('8:00hrs - 12:00hrs','8:00hrs - 12:00hrs'),
+        ('13:00hrs - 18:00hrs', '13:00hrs - 18:00hrs'),
     ])
-    img = models.ImageField(verbose_name='Foto do recipiente com o óleo', default='', upload_to='media', blank=True)
+    img = models.ImageField(verbose_name='Foto do recipiente com o óleo', default='', upload_to='collect', blank=True)
     created = models.DateField(auto_now_add=True)
     status = models.CharField(max_length=10, default='Pendente', choices=[
         ('Pendente','Pendente'),
@@ -27,5 +27,6 @@ class Collect(models.Model):
         ('Concluida', 'Concluida'),
         ('Cancelada', 'Cancelada'),
     ])  
-    obs = models.TextField(default='')
+    obs = models.TextField(max_length=50, default='')
+    real_liters = models.FloatField(verbose_name='Quantidade real de óleo (Lts)', default=0)
 

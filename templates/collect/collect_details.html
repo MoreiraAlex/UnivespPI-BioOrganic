@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block title %}Entrar{% endblock %}
+
+{% block content %}
+    <div class="collect-base">
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form method="POST" enctype="multipart/form-data">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            <button class="btn btn-primary" type="submit" value="Nova Coleta">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Cancel -->
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <form action="cancel/{{collect.id}}">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Cancelar coleta numero #{{ collect.id }}?</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <button class="btn btn-primary" type="submit">Sim</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card text-center">
+            <div class="card-header card-header-collect">
+                <h5 class="card-title">Coleta de óleo numero #{{ collect.id }}</h5>
+            </div>
+            <div class="card-body card-body-collect">
+                <div class="card-content-collect">
+                    <div class="card-text-first">
+                        <p>
+                            Status da coleta
+                            <br>
+                            {{ collect.status }}
+                        </p>
+                        <p>
+                            Litros reciclado: estimativa 
+                            <br>
+                            {{ collect.liters }} Litros
+                        </p>
+                        <p>
+                            Litros reciclado: real
+                            <br>
+                            {% if collect.real_liters %}
+                                {{ collect.real_liters }} Litros
+                            {% else %}
+                                Pendente
+                            {% endif %}
+                        </p>
+                    </div>
+                    <div class="card-text-second">
+                        <div>
+                            <p class="card-text">
+                                Endereço da coleta:
+                                <br>
+                                <span class="text-muted">
+                                    {{ collect.address }} {{ collect.number }} {{ collect.complement }}
+                                    <br>
+                                    CEP {{ collect.cep }}, {{ collect.block }}, {{ collect.city }} - {{ collect.uf }}
+                                </span>
+                            </p>
+                            <p class="card-text">
+                                Data e horario da coleta:
+                                <br>
+                                <span class="text-muted">
+                                    {{ collect.date }}
+                                    <br>
+                                    {{ collect.time }}
+                                </span>
+                            </p>
+                        </div>
+                        <p class="obs">
+                            Observações
+                            <br>
+                            {{ collect.obs }}
+                        </p>
+                    </div>
+                </div>
+                <img src="/media/{{ collect.img }}" alt="Imagem do recipiente com o óleo" style="width: 500px;">
+            </div>
+            <div class="card-footer text-muted card-footer-collect">
+                <div class="card-footer-buttons">
+                    {% if collect.status == 'Pendente' or collect.status == 'Reprovada' %}
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Editar</button>
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal2">Cancelar</button>
+                    {% endif %}
+                </div>
+                Criado em {{ collect.created }}
+            </div>
+        </div>
+
+
+
+          
+    </div>
+    
+{% endblock %}
+
+

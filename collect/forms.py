@@ -25,6 +25,7 @@ class CollectForm(ModelForm):
             'created',
             'status',
             'obs',
+            'real_liters',
         ]
            
     def __init__(self, *args, **kwargs):
