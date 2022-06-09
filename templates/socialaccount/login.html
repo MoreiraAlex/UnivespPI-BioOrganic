@@ -2,7 +2,6 @@
 
 {% block title %}Entrar{% endblock %}
 
-{% load crispy_forms_tags %}
 {% load socialaccount %}
 
 {% block content %}
@@ -10,15 +9,15 @@
         <div class="custom-signup-form">
             <h2>Entre na Biorg@nic</h2>
             <div class="custom-form">
-                <a href="{% provider_login_url 'google' %}"><button class="btn btn-custom"><i class="bi bi-google"></i> Continue com google</button></a>
-                <p>ou</p>
                 <form method="post">
                     {% csrf_token %}
-                    {{ form|crispy }}
-                    <button class="btn btn-success" type="submit">Entrar</button>
+                    <p>Permitir o vinculo com conta Google?</p>
+                    <div class="custom-btns">
+                        <button class="btn btn-primary" type="submit">Sim</button>
+                        <a href="/accounts/login"><button class="btn btn-secondary" type="button">Não</button></a>
+                    </div>
                 </form>
             </div>
-            <p>Ainda nao tem conta? <a href="../signup">Crie agora!</a></p>
         </div>
     </div>
 {% endblock %}

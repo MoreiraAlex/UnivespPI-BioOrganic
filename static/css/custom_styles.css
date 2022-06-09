@@ -43,11 +43,39 @@
     margin: 3rem 0;
 }
 
-.custom-signup-form form{
+.custom-signup-form .custom-form{
     border: 1px solid #212529;
     box-shadow: 2px 2px 4px #21252967;
     background-color: #2125291e;
     padding: 5% 10%;
+}
+
+.custom-signup-form .custom-form .btn-custom{
+    text-align: center;
+    text-transform: none;
+    font-weight: 400;
+    padding: 11px 6px;
+    font-size: 14px;
+    border: 1px solid #d6d6d6;
+    background-color: #fff;
+    color: #3c3c3c;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    width: 100%;
+}
+
+.custom-signup-form .custom-form .btn-custom:hover{
+    background-color: rgb(240, 240, 240);
+    color: black;
+}
+
+.custom-signup-form .custom-form p{
+    text-align: center;
+}
+
+.custom-signup-form .custom-form .custom-btns{
+    display: flex;
+    justify-content: space-evenly;
 }
 
 /**********************/
