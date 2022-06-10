@@ -13,4 +13,4 @@ DATABASES = {
     'default': env.db(),
 }
 
-SITE_ID = env.int('SITE_ID')
+SITE_ID = env.int('SITE_ID', 1)
