@@ -12,3 +12,5 @@ ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
 DATABASES = {
     'default': env.db(),
 }
+
+SITE_ID = env.int('SITE_ID')

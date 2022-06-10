@@ -42,7 +42,7 @@ def collectDetails(request, id):
         form = CollectForm(request.POST, request.FILES, instance=collect)
  
         if form.is_valid():
-            collect = form.save()
+            form.save()
             return redirect('/collect/' + str(id))
         else:
             return render(request, 'collect/collect_details.html', {'form': form, 'collect': collect})
