@@ -18,7 +18,7 @@ class Collect(models.Model):
         ('8:00hrs - 12:00hrs','8:00hrs - 12:00hrs'),
         ('13:00hrs - 18:00hrs', '13:00hrs - 18:00hrs'),
     ])
-    img = models.ImageField(verbose_name='Foto do recipiente com o óleo', default='', upload_to='collect', blank=True)
+    img = models.ImageField(verbose_name='Foto do recipiente com o óleo', default='', upload_to='', blank=True)
     created = models.DateField(auto_now_add=True)
     status = models.CharField(max_length=10, default='Pendente', choices=[
         ('Pendente','Pendente'),
