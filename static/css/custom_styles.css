@@ -59,9 +59,26 @@
     font: 400 1rem/1.625rem "Open Sans", sans-serif;
 }
 
+/**********************/
+/*      Services      */
+/**********************/
 
+.services{
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+    margin: 150px 100px;
+}
 
+.services .content{
+    display: flex;
+    gap: 100px;
+}
 
+.services .content img{
+    border-radius: 50%;
+    width: 200px;
+}
 
 /**********************/
 /*   signup/signin    */
