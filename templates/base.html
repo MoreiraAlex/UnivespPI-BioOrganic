@@ -62,7 +62,7 @@
                             {% if user.full %}
                                 <a class="nav-link" href="/collect">Recicle e ganhe</a>
                             {% else %}
-                                <a class="nav-link" href="/accounts/data/{{ user.id }}">Recicle e ganhe</a>
+                                <a class="nav-link" href="/accounts/data-edit/{{ user.id }}">Recicle e ganhe</a>
                             {% endif %}
                         {% else %}
                             <a class="nav-link" href="/accounts/login">Recicle e ganhe</a>
@@ -81,7 +81,7 @@
                     <div class="nav-user">
                         {% if user.is_authenticated %}
                         <li class="nav-item">
-                          <a class="nav-link" href="/accounts/profile">
+                          <a class="nav-link" href="/accounts/profile/{{ user.id }}">
                               {% if user.first_name %}
                                 {{ user.first_name }}
                               {% else %}

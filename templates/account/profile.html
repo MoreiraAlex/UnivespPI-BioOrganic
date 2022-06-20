@@ -1,11 +1,37 @@
 {% extends 'account/base_profile.html' %}
 
-{% block title %}Entrar{% endblock %}
-
-{% load crispy_forms_tags %}
+{% block title %}Perfil{% endblock %}
 
 {% block content_profile %}
-<h2>Perfil</h2>
+    <div class="profile">
+
+        <h2>Perfil</h2>
+        
+        <div class="profile-user">
+            <h3>{{ user.first_name }} {{ user.last_name }}</h3>
+            <p>Realiza descarte de óleo? {{ user.descard }}</p>
+            <p>A cada quanto tempo? {{ user.time }}</p>
+        </div>
+        
+        <div class="profile-contact">
+            <h4>Contato</h4>
+            <p>Telefone: {{ user.phone }}</p>
+            <p>
+                {% if user.insta %}
+                    Instagram: {{ user.insta }}
+                {% else %}
+                    Instagram: Não informado
+                {% endif %}
+            </p>
+        </div>
+        
+        <div class="profile-address">
+            <h4>Endereço</h4>
+            <p>{{ user.address }} {{ user.number }} {{ user.complement }}</p>
+            <p>CEP {{ user.cep }}</p>
+            <p>{{ user.block }}, {{ user.city }} - {{ user.uf }}</p>
+        </div>
+    </div>
 {% endblock %}
 
 

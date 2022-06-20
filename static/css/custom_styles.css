@@ -92,6 +92,36 @@
 
 }
 
+.profile-content .profile{
+    margin: 0 8% 8% 8%;
+    width: 680px;
+}
+
+.profile-content .profile h2{
+    margin: 5% 0;
+}
+
+.profile-content .profile div{
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 10px;
+    padding: 2%;
+    margin-bottom: 10px;
+}
+
+.profile-content .profile div h3{
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    text-align: center;
+}
+
+.profile-content .profile div h4{
+    border-bottom: 1px solid rgba(0,0,0,.125);
+
+}
+
+.profile-content .profile div p{
+    margin: 1% 0;
+}
+
 .profile-content .data{
     margin: 0 10%;
     width: 680px;

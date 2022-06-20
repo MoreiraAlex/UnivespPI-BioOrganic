@@ -3,8 +3,9 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import DataForm, DataFormEdit
 from .models import User
 
-def profile(request):
-    return render(request, 'account/profile.html')
+def profile(request, id):
+    user = get_object_or_404(User, pk=id)
+    return render(request, 'account/profile.html', {'user': user})
 
 
 def view_data(request, id):
