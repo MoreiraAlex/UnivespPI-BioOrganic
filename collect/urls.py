@@ -4,7 +4,7 @@ from . import views
 app_name = 'collect'
 
 urlpatterns = [
-    path('', views.collect, name='collect'),
+    path('', views.collect, name='collect_list'),
     path('<int:id>', views.collectDetails, name='collectDetails'),
     path('cancel/<int:id>', views.collectCancel, name='collectCancel'),
 ]

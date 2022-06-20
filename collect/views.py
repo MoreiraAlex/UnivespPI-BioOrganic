@@ -5,13 +5,9 @@ from users.models import User
 
 
 def collect(request):
-    users = User.objects.filter(username = request.user)
     form = CollectForm()
 
-    for i in users:
-        user = i
-
-    collections = Collect.objects.all().filter(user = user).order_by('-created')
+    collections = Collect.objects.all().filter(user = request.user).order_by('-id')
 
     oilLiters = 0
     for i in collections:
@@ -22,10 +18,13 @@ def collect(request):
         form = CollectForm(request.POST, request.FILES)
 
         if form.is_valid():
+            users = User.objects.filter(username = request.user)
+            
             collect = form.save(commit=False)
-            collect.user = user
-            collect.name = user.first_name + ' ' + user.last_name
+            collect.user = users[0]
+            collect.name = users[0].first_name + ' ' + users[0].last_name
             collect.save()
+
             return redirect('/collect')
         else:
             return render(request, 'collect/collect.html', {'form': form, 'collections': collections, 'oilLiters': oilLiters})
@@ -52,7 +51,6 @@ def collectDetails(request, id):
 
 def collectCancel(request, id):
     collect = get_object_or_404(Collect, pk=id)
-    print('entrou')
     collect.status = 'Cancelada'
     collect.save()
     return redirect('/collect/' + str(id))
