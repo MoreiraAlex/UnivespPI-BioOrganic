@@ -13,7 +13,7 @@ class User(AbstractUser):
     complement = models.CharField(verbose_name='Complemento', max_length=30, default= '', blank=True)
     phone = models.CharField(verbose_name='Telefone', max_length=14, default= '')
     insta = models.CharField(verbose_name='Instagram', max_length=30, default= '', blank=True)
-    descard = models.BooleanField( verbose_name='Realiza descarte de óleo frequentemente?', default=False, choices=[
+    descard = models.CharField(max_length=3, verbose_name='Realiza descarte de óleo frequentemente?', default=False, choices=[
         ('Sim', 'Sim'),
         ('Não', 'Não')
     ])
