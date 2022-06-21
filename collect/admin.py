@@ -10,9 +10,9 @@ class CollectAdmin(admin.ModelAdmin):
 
     readonly_fields = ['foto']
 
-    list_display = ('user', 'name', 'status',)
+    list_display = ('id', 'user', 'name', 'status',)
     list_filter = ('user', 'name', 'status', 'date', 'time',)
-    search_fields = ('user', 'name', 'status',)
+    search_fields = ('id', 'user', 'name', 'status',)
 
     fieldsets = (
         ('Usuario', {'fields': ('user', 'name',)}),

@@ -30,3 +30,6 @@ class Collect(models.Model):
     obs = models.TextField(max_length=50, default='')
     real_liters = models.FloatField(verbose_name='Quantidade real de óleo (Lts)', default=0)
 
+    def __str__(self):
+        return ('#' + str(self.id))
+
