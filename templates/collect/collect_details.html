@@ -102,7 +102,7 @@
                         </p>
                     </div>
                 </div>
-                <img src="/media/{{ collect.img }}" alt="Imagem do recipiente com o óleo" style="width: 500px;">
+                <img src="{{ collect.img.url }}" alt="Imagem do recipiente com o óleo" style="width: 500px;">
             </div>
             <div class="card-footer text-muted card-footer-collect">
                 <div class="card-footer-buttons">
@@ -114,10 +114,7 @@
                 Criado em {{ collect.created }}
             </div>
         </div>
-
-
-
-          
+   
     </div>
     
 {% endblock %}
