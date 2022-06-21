@@ -13,13 +13,16 @@ DATABASES = {
     'default': env.db(),
 }
 
+#Google account
+#################################################################################
 SITE_ID = env.int('SITE_ID', 1)
+#################################################################################
 
 #AMAZOM S3
 #################################################################################
-AWS_ACCESS_KEY_ID = 'AKIAVMZ77YHHMR6DZTWR'
-AWS_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'biorganic'
+AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = env('AWS_STORAGE_BUCKET_NAME')
 
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
