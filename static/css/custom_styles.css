@@ -10,13 +10,13 @@
 .navbar .nav-item form button{
 	padding-top: 0.625rem;
 	padding-bottom: 0.625rem;
-	color: #ffffff8c;
+	color: #042940;
 	text-decoration: none;
 	transition: all 0.2s ease;
     border: none;
-    background-color: #161223;
+    background-color: #D6D58E;
 	font-weight: 600;
-	font-size: 0.875rem;
+	font-size: 1.2rem;
 }
 
 /*******************/
@@ -29,8 +29,7 @@
 }
 
 .details .area-1 img{
-    width: 675px;
-    height: 100%;
+    width: 500px;
 }
 
 .details .area-2 {

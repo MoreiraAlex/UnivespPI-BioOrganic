@@ -9,6 +9,7 @@ window.onscroll = function () {
 
 window.onload = function () {
 	scrollFunction();
+	const video = document.querySelector('#video');
 };
 
 function scrollFunction() {

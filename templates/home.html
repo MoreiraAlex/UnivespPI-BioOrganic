@@ -19,8 +19,8 @@
         </div> <!-- end of header-content -->
 
         <!-- Video Background -->
-        <video autoplay loop muted id="video-background" poster="/static/header-background.jpg" playsinline>
-            <source src="/static/images/header-background-video.mp4" type="video/mp4" />
+        <video autoplay loop muted id="video-background" poster="/static/images/header-background.png" playsinline>
+            <source src="/static/videos/background.mp4" type="video/mp4" />
         </video>
         <!-- end of video background -->          
         <!-- end of header -->
@@ -88,14 +88,14 @@
         <!-- Details -->
         <div class="details">
             <div class="area-1">
-                <img src="/static/images/Coletar-o-óleo-usado.jpg" alt="Óleos usados">
+                <img src="/static/images/Coletar-o-óleo-usado.jpeg" alt="Óleos usados">
             </div>
             <div class="area-2">
                 <h2>O que você ganha reciclando óleo?</h2>
                 <p>Além de você não contaminar o meio ambiente, você poderá ganhar brindes das empresas parceiras da biorganic que realizam a reciclagem nos locais combinados ou no domicílio onde seja solicitada a coleta.</p>
                                 
                 <h2>Quem pode reciclar?</h2>
-                <p>Se você é uma empresa, bar, lanchonete, casa, condomínio, etc. que coleta óleo usado em garrafas, bombonas, etc. você poderá solicitar a coleta do resíduo no local sempre que a quantia (L) de resíduo seja a mínima solicitada pela empresa parceira. A solicitação poderá ser feita através da opção (COLOCAR O NOME DA OPÇÃO DO SITE)</p>
+                <p>Se você é uma empresa, bar, lanchonete, casa, condomínio, etc. que coleta óleo usado em garrafas, bombonas, etc. você poderá solicitar a coleta do resíduo no local sempre que a quantia (L) de resíduo seja a mínima solicitada pela empresa parceira. A solicitação poderá ser feita através da opção <a href="{% if user.is_authenticated %}{% if user.full %}/collect{% else %}/accounts/data-edit/{{ user.id }}{% endif %}{% else %}/accounts/login{% endif %}">Recile e ganhe</a></p>
                                 
                 <h2>O que a  BiOrganic ganha com todo isto</h2>
                 <p>Somos uma startup social que nasceu no InovaSan 2021, o nosso principal objetivo é oportunizar a reciclagem do óleo de cozinha usado de forma SUSTENTÁVEL e aportando para a redução da contaminação do meio ambiente. As nossas premissas são:</p>
@@ -120,18 +120,26 @@
                         <li>Encontre outras empresas que realizam a reciclagem de outros tipos de resíduos: orgânicos, metálicos, etc.</li>
                         <li>Você é reciclador?... cadastre-se e participe da rede.</li>
                     </ul>
-                    <a class="read-more no-line green" href="/manun">Mais detalhes<span class="fas fa-long-arrow-alt-right"></span></a>
+                    <a class="read-more no-line green" href="/manun">Mais detalhes</a>
                 </div>
             </div>
-
+            <img src="../" alt="">
             <div class="content">
                 <img src="/static/images/Coletores-de-óleo.jpg" alt="Imagem pontos de coleta">
                 <div class="text-content">
                     <h2>Cadastre-se</h2>
                     <ul>
                         <li>Cadastre-se como empresa, condomínio ou casa coletora recorrente e deixe os seus dados disponíveis na nossa base para que uma das empresas coletoras entre em contato e faça a gestão do seu resíduo.</li>
+                        <li>
+                            Para realizar seu cadastro siga as instruções abaixo:
+                            <ul>
+                                <li>Faça o cadastro ou login na nossa plataforma através desse <a href="/accounts/login">link</a>, ou acesse o item <strong>Entrar/Cadastrar</strong> localizado na barra de navegação do site</li>
+                                <li>Após preencher todos os seus dados, acesse a area de <strong>Recicle e ganhe</strong>, localizado na barra de navegação do site ou acesse esse <a href="{% if user.is_authenticated %}{% if user.full %}/collect{% else %}/accounts/data-edit/{{ user.id }}{% endif %}{% else %}/accounts/login{% endif %}">link</a></li>
+                            </ul>
+                        </li>
+                        <li>Agora é só aproveitar!</li>
                     </ul>
-                    <a class="read-more no-line green" href="/manun">Mais detalhes<span class="fas fa-long-arrow-alt-right"></span></a>
+                    <a class="read-more no-line green" href="{% if user.is_authenticated %}{% if user.full %}/collect{% else %}/accounts/data-edit/{{ user.id }}{% endif %}{% else %}/accounts/login{% endif %}">Recile seu residuo</a>
                 </div>
             </div>
         </div>

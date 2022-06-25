@@ -23,9 +23,9 @@ Table Of Contents:
 /*****************************************
 Colors:
 - Backgrounds - light gray #f7f9fd
-- Headings text - black #161223
+- Headings text - black #D6D58E
 - Body text - dark gray #53575a
-- Buttons, icons - green #7dc22b
+- Buttons, icons - green #9FC131
 ******************************************/
 
 
@@ -44,7 +44,7 @@ body, p {
 }
 
 h1 {
-	color: #161223;
+	color: #042940;
 	font-weight: 600;
 	font-size: 2.5rem;
 	line-height: 3.25rem;
@@ -52,7 +52,7 @@ h1 {
 }
 
 h2 {
-	color: #161223;
+	color: #042940;
 	font-weight: 600;
 	font-size: 2rem;
 	line-height: 2.5rem;
@@ -60,7 +60,7 @@ h2 {
 }
 
 h3 {
-	color: #161223;
+	color: #042940;
 	font-weight: 600;
 	font-size: 1.75rem;
 	line-height: 2.25rem;
@@ -68,7 +68,7 @@ h3 {
 }
 
 h4 {
-	color: #161223;
+	color: #042940;
 	font-weight: 600;
 	font-size: 1.5rem;
 	line-height: 2rem;
@@ -76,7 +76,7 @@ h4 {
 }
 
 h5 {
-	color: #161223;
+	color: #042940;
 	font-weight: 600;
 	font-size: 1.25rem;
 	line-height: 1.625rem;
@@ -84,7 +84,7 @@ h5 {
 }
 
 h6 {
-	color: #161223;
+	color: #042940;
 	font-weight: 600;
 	font-size: 1rem;
 	line-height: 1.375rem;
@@ -147,7 +147,7 @@ a:hover {
 }
 
 .green {
-	color: #7dc22b;
+	color: #9FC131;
 }
 
 .bg-gray {
@@ -157,9 +157,9 @@ a:hover {
 .btn-solid-reg {
 	display: inline-block;
 	padding: 1.375rem 2.25rem 1.375rem 2.25rem;
-	border: 1px solid #7dc22b;
+	border: 1px solid #9FC131;
 	border-radius: 4px;
-	background-color: #7dc22b;
+	background-color: #9FC131;
 	color: #ffffff;
 	font-weight: 600;
 	font-size: 0.875rem;
@@ -170,17 +170,17 @@ a:hover {
 
 .btn-solid-reg:hover {
 	background-color: transparent;
-	color: #7dc22b; /* needs to stay here because of the color property of a tag */
+	color: #9FC131; /* needs to stay here because of the color property of a tag */
 	text-decoration: none;
 }
 
 .btn-solid-lg {
 	display: inline-block;
 	padding: 1.625rem 2.625rem 1.625rem 2.625rem;
-	border: 1px solid #7dc22b;
+	border: 1px solid #D6D58E;
 	border-radius: 4px;
-	background-color: #7dc22b;
-	color: #ffffff;
+	background-color: #D6D58E;
+	color: #042940;
 	font-weight: 600;
 	font-size: 0.875rem;
 	line-height: 0;
@@ -190,17 +190,17 @@ a:hover {
 
 .btn-solid-lg:hover {
 	background-color: transparent;
-	color: #7dc22b; /* needs to stay here because of the color property of a tag */
+	color: #D6D58E; /* needs to stay here because of the color property of a tag */
 	text-decoration: none;
 }
 
 .btn-outline-reg {
 	display: inline-block;
 	padding: 1.375rem 2.25rem 1.375rem 2.25rem;
-	border: 1px solid #161223;
+	border: 1px solid #D6D58E;
 	border-radius: 4px;
 	background-color: transparent;
-	color: #161223;
+	color: #D6D58E;
 	font-weight: 600;
 	font-size: 0.875rem;
 	line-height: 0;
@@ -209,7 +209,7 @@ a:hover {
 }
 
 .btn-outline-reg:hover {
-	background-color: #161223;
+	background-color: #D6D58E;
 	color: #ffffff;
 	text-decoration: none;
 }
@@ -217,10 +217,10 @@ a:hover {
 .btn-outline-lg {
 	display: inline-block;
 	padding: 1.625rem 2.625rem 1.625rem 2.625rem;
-	border: 1px solid #161223;
+	border: 1px solid #D6D58E;
 	border-radius: 4px;
 	background-color: transparent;
-	color: #161223;
+	color: #D6D58E;
 	font-weight: 600;
 	font-size: 0.875rem;
 	line-height: 0;
@@ -229,7 +229,7 @@ a:hover {
 }
 
 .btn-outline-lg:hover {
-	background-color: #161223;
+	background-color: #D6D58E;
 	color: #ffffff;
 	text-decoration: none;
 }
@@ -237,10 +237,10 @@ a:hover {
 .btn-outline-sm {
 	display: inline-block;
 	padding: 1rem 1.5rem 1rem 1.5rem;
-	border: 1px solid #161223;
+	border: 1px solid #D6D58E;
 	border-radius: 4px;
 	background-color: transparent;
-	color: #161223;
+	color: #D6D58E;
 	font-weight: 600;
 	font-size: 0.875rem;
 	line-height: 0;
@@ -249,7 +249,7 @@ a:hover {
 }
 
 .btn-outline-sm:hover {
-	background-color: #161223;
+	background-color: #D6D58E;
 	color: #ffffff;
 	text-decoration: none;
 }
@@ -293,9 +293,9 @@ a:hover {
 	display: inline-block;
 	width: 100%;
 	height: 3.25rem;
-	border: 1px solid #7dc22b;
+	border: 1px solid #9FC131;
 	border-radius: 4px;
-	background-color: #7dc22b;
+	background-color: #9FC131;
 	color: #ffffff;
 	font-weight: 600;
 	font-size: 0.875rem;
@@ -305,9 +305,9 @@ a:hover {
 }
 
 .form-control-submit-button:hover {
-	border: 1px solid #7dc22b;
+	border: 1px solid #9FC131;
 	background-color: transparent;
-	color: #7dc22b;
+	color: #9FC131;
 }
 
 
@@ -315,11 +315,12 @@ a:hover {
 /*     Navigation     */
 /**********************/
 .navbar {
-	background-color: #161223;
+	background-color: #D6D58E;
 	font-weight: 600;
-	font-size: 0.875rem;
-	line-height: 0.875rem;
+	font-size: 1.2rem;
+	line-height: 3rem;
 	box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.025);
+	
 }
 
 .navbar .navbar-brand {
@@ -333,9 +334,9 @@ a:hover {
 }
 
 .navbar .logo-text {
-	color: #ffffff;
+	color: #042940!important;
 	font-weight: 700;
-	font-size: 1.875rem;
+	font-size: 2.5rem;
 	line-height: 1rem;
 	text-decoration: none;
 }
@@ -350,7 +351,7 @@ a:hover {
 	padding-left: 1rem;
 	overflow-y: auto;
 	visibility: hidden;
-	background-color: #161223;
+	background-color: #D6D58E;
 	transition: visibility .3s ease-in-out, -webkit-transform .3s ease-in-out;
 	transition: transform .3s ease-in-out, visibility .3s ease-in-out;
 	transition: transform .3s ease-in-out, visibility .3s ease-in-out, -webkit-transform .3s ease-in-out;
@@ -370,7 +371,7 @@ a:hover {
 .navbar .nav-item .nav-link {
 	padding-top: 0.625rem;
 	padding-bottom: 0.625rem;
-	color: #eeeeee;
+	color: #042940!important;
 	text-decoration: none;
 	transition: all 0.2s ease;
 }
@@ -378,7 +379,7 @@ a:hover {
 .navbar .nav-item.dropdown.show .nav-link,
 .navbar .nav-item .nav-link:hover,
 .navbar .nav-item .nav-link.active {
-	color: #7dc22b;
+	color: #9FC131;
 }
 
 /* Dropdown Menu */
@@ -400,7 +401,7 @@ a:hover {
 	margin-top: 0.25rem;
 	margin-bottom: 0.25rem;
 	border: none;
-	background-color: #161223;
+	background-color: #D6D58E;
 }
 
 .navbar .dropdown-item {
@@ -414,8 +415,8 @@ a:hover {
 }
 
 .navbar .dropdown-item:hover {
-	background-color: #161223;
-	color: #7dc22b;
+	background-color: #D6D58E;
+	color: #9FC131;
 }
 
 .navbar .dropdown-divider {
@@ -434,7 +435,7 @@ a:hover {
 }
 
 .navbar .fa-stack-2x {
-	color: #7dc22b;
+	color: #9FC131;
 	transition: all 0.2s ease;
 }
 
@@ -448,7 +449,7 @@ a:hover {
 }
 
 .navbar .fa-stack:hover .fa-stack-1x {
-	color: #7dc22b;
+	color: #9FC131;
 }
 
 .navbar .navbar-toggler {
@@ -486,7 +487,7 @@ a:hover {
 
 .header .h1-large {
 	margin-bottom: 2.25rem;
-	color: #ffffff;
+	color: #042940!important;
 	font-size: 3rem;
 	line-height: 3.75rem;
 }
@@ -527,7 +528,7 @@ a:hover {
 	margin-bottom: 2rem;
 	margin-left: auto;
 	border-radius: 50%;
-	background-color: #7dc22b;
+	background-color: #9FC131;
 	text-align: center;
 }
 
@@ -660,7 +661,7 @@ a:hover {
 
 .filter .button:hover,
 .filter .button.is-checked {
-	background-color: #7dc22b;
+	background-color: #9FC131;
 	color: #ffffff;
 }
 
@@ -740,7 +741,7 @@ a:hover {
 
 .slider-1 .testimonial-author {
 	margin-bottom: 0.25rem;
-	color: #161223;
+	color: #D6D58E;
 }
 
 .slider-1 .text-decoration {
@@ -784,7 +785,7 @@ a:hover {
 }
 
 .form-1 .list-unstyled .fas {
-	color: #7dc22b;
+	color: #9FC131;
 }
 
 .form-1 .form-control-input,
@@ -815,14 +816,14 @@ a:hover {
 
 .counter .purecounter {
 	margin-bottom: 1.5rem;
-	color: #7dc22b;
+	color: #9FC131;
 	font-weight: 600;
 	font-size: 5rem;
 	line-height: 3rem;
 }
 
 .counter .counter-info {
-	color: #161223;
+	color: #042940;
 	font-size: 0.875rem;
 	line-height: 1.5rem;
 }
@@ -834,7 +835,7 @@ a:hover {
 .footer {
 	padding-top: 6.5rem;
 	padding-bottom: 2rem;
-	background-color: #161223;
+	background-color: #D6D58E;
 }
 
 .footer a {
@@ -847,13 +848,13 @@ a:hover {
 
 .footer h6 {
 	margin-bottom: 0.625rem;
-	color: #9ba3b1;
+	color: #042940;
 }
 
 .footer p,
 .footer a,
 .footer ul {
-	color: #9ba3b1;
+	color: #042940;
 }
 
 .footer .li-space-lg li {
@@ -873,12 +874,12 @@ a:hover {
 }
 
 .footer .footer-col.third .fa-stack .fa-stack-1x {
-    color: #9ba3b1;
+    color: #042940;
 	transition: all 0.2s ease;
 }
 
 .footer .footer-col.third .fa-stack:hover .fa-stack-2x {
-    color: #7dc22b;
+    color: #9FC131;
 }
 
 .footer .footer-col.third .fa-stack:hover .fa-stack-1x {
@@ -891,13 +892,13 @@ a:hover {
 /*********************/
 .copyright {
 	padding-bottom: 1rem;
-	background-color: #161223;
+	background-color: #D6D58E;
 	text-align: center;
 }
 
 .copyright p,
 .copyright a {
-	color: #9ba3b1;
+	color: #042940;
 	text-decoration: none;
 }
 
@@ -937,7 +938,7 @@ a:hover {
 .ex-header {
 	padding-top: 8.5rem;
 	padding-bottom: 4rem;
-	background-color: #161223;
+	background-color: #D6D58E;
 }
 
 .ex-header h1 {
@@ -969,7 +970,7 @@ a:hover {
 }
 
 .ex-cards-1 .card .fa-stack-2x {
-	color: #7dc22b;
+	color: #9FC131;
 }
 
 .ex-cards-1 .card .fa-stack-1x {
@@ -1064,7 +1065,7 @@ a:hover {
 	.navbar.top-nav-collapse {
 		padding-top: 0.5rem;
 		padding-bottom: 0.5rem;
-		background-color: #161223;
+		background-color: #D6D58E;
 		box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.025);
 	}
 
