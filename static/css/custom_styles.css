@@ -230,6 +230,32 @@
     margin-bottom: 2%;
 }
 
+.collect-accordion .steps div div:last-of-type{
+    border-right: 1px solid black;
+}
+
+.collect-accordion .steps .step-row-1 div{
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+}
+
+.collect-accordion .steps .step-row-2 div{
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+}
+
+.collect-accordion .steps div div{
+    padding: 10px 0px 0px 20px;
+}
+
+.collect-accordion .steps div div img{
+    width: 180px;
+    height: 250px;
+    display: block;
+    margin: auto;
+}
+
 .collect-button{
     display: flex;
     justify-content: end;
