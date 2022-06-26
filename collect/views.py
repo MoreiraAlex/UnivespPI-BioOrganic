@@ -22,7 +22,14 @@ def collect(request):
             
             collect = form.save(commit=False)
             collect.user = users[0]
-            collect.name = users[0].first_name + ' ' + users[0].last_name
+            collect.name = users[0].first_name + '|' + users[0].last_name
+            collect.cep = users[0].cep
+            collect.uf = users[0].uf
+            collect.city = users[0].city
+            collect.block = users[0].block
+            collect.address = users[0].address
+            collect.number = users[0].number
+            collect.complement = users[0].complement
             collect.save()
 
             return redirect('/collect')

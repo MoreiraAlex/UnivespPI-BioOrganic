@@ -11,13 +11,13 @@ class CollectAdmin(admin.ModelAdmin):
     readonly_fields = ['foto']
 
     list_display = ('id', 'user', 'name', 'status',)
-    list_filter = ('user', 'name', 'status', 'date', 'time',)
+    list_filter = ('user', 'name', 'status', 'day', 'time',)
     search_fields = ('id', 'user', 'name', 'status',)
 
     fieldsets = (
         ('Usuario', {'fields': ('user', 'name',)}),
         ('Qualidade da coleta', {'fields': ('liters', 'foto',)}),
         ('Informações sobre a coleta', {'fields': ('cep', 'address', 'number', 'complement', 'block', 'city', 'uf',)}),
-        ('', {'fields': ('date', 'time',)}),
+        ('', {'fields': ('day', 'time',)}),
         ('Retorno', {'fields': ('real_liters', 'status', 'obs',)}),
     )

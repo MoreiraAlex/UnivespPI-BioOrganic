@@ -9,14 +9,7 @@ class CollectForm(ModelForm):
         model = Collect
         fields = [
             'liters',
-            'cep',
-            'uf',
-            'city',
-            'block',
-            'address',
-            'number',
-            'complement',
-            'date',
+            'day',
             'time',
             'img',
         ]
@@ -26,8 +19,15 @@ class CollectForm(ModelForm):
             'status',
             'obs',
             'real_liters',
+            'cep',
+            'uf',
+            'city',
+            'block',
+            'address',
+            'number',
+            'complement',
         ]
            
-    def __init__(self, *args, **kwargs):
+    '''def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)  
-        self.fields['date'].widget=forms.widgets.DateInput(attrs={'type': 'date'})
+        self.fields['date'].widget=forms.widgets.DateInput(attrs={'type': 'date'})'''
