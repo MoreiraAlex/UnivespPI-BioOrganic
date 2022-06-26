@@ -13,6 +13,7 @@ class DataFormEdit(forms.ModelForm):
         fields = [
             'first_name',
             'last_name',
+            'cpf_cnpj',
             'cep',
             'uf',
             'city',
@@ -20,10 +21,9 @@ class DataFormEdit(forms.ModelForm):
             'address',
             'number',
             'complement',
+            'liters',
             'phone',
             'insta',
-            'descard',
-            'time',
         ]
 
         exclude = [
@@ -41,9 +41,9 @@ class DataForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)  
-        self.fields['first_name'].widget.attrs.update({'disabled': ''})    
-        self.fields['first_name'].required = True  
-        self.fields['last_name'].widget.attrs.update({'disabled': ''})    
+        self.fields['first_name'].widget.attrs.update({'disabled': ''}) 
+        self.fields['last_name'].widget.attrs.update({'disabled': ''})
+        self.fields['cpf_cnpj'].widget.attrs.update({'disabled': ''})    
         self.fields['cep'].widget.attrs.update({'disabled': ''})
         self.fields['uf'].widget.attrs.update({'disabled': ''})    
         self.fields['city'].widget.attrs.update({'disabled': ''})    
@@ -51,7 +51,6 @@ class DataForm(forms.ModelForm):
         self.fields['address'].widget.attrs.update({'disabled': ''})    
         self.fields['number'].widget.attrs.update({'disabled': ''})    
         self.fields['complement'].widget.attrs.update({'disabled': ''})    
+        self.fields['liters'].widget.attrs.update({'disabled': ''})  
         self.fields['phone'].widget.attrs.update({'disabled': ''})    
         self.fields['insta'].widget.attrs.update({'disabled': ''})    
-        self.fields['descard'].widget.attrs.update({'disabled': ''})    
-        self.fields['time'].widget.attrs.update({'disabled': ''})    

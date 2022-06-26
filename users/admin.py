@@ -10,10 +10,10 @@ class UserAdmin(auth_admin.UserAdmin):
     model = User
     
     fieldsets = (
+        (None, {'fields': ('cpf_cnpj',)}),
         ('Contato', {'fields': ('phone', 'insta',)}),
         ('Endereço', {'fields': ('cep', 'uf', 'city', 'block', 'address', 'number', 'complement',)}),
-        ('Descarte', {'fields': ('descard', 'time',)}),
-        ('Cadastro', {'fields': ('full',)}),
+        ('Cadastro', {'fields': ('liters', 'full',)}),
     ) + auth_admin.UserAdmin.fieldsets
 
     list_display = ('username', 'email', 'first_name', 'is_active', 'is_staff')

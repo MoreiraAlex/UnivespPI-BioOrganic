@@ -8,13 +8,16 @@
         <h2>Perfil</h2>
         
         <div class="profile-user">
-            <h3>{{ user.first_name }} {{ user.last_name }}</h3>
-            <p>Realiza descarte de óleo? {{ user.descard }}</p>
-            <p>A cada quanto tempo? {{ user.time }}</p>
+            <div class="title">
+                <h3>{{ user.first_name }}</h3>
+                <h4> {{ user.last_name }}</h4>
+            </div>
+            <p>CPF/CNPJ: {{ user.cpf_cnpj }}</p>
+            <p>Média de óleo utilzado por mês: {{ user.liters }}L</p>
         </div>
         
         <div class="profile-contact">
-            <h4>Contato</h4>
+            <h5>Contato</h5>
             <p>Telefone: {{ user.phone }}</p>
             <p>
                 {% if user.insta %}
@@ -26,7 +29,7 @@
         </div>
         
         <div class="profile-address">
-            <h4>Endereço</h4>
+            <h5>Endereço</h5>
             <p>{{ user.address }} {{ user.number }} {{ user.complement }}</p>
             <p>CEP {{ user.cep }}</p>
             <p>{{ user.block }}, {{ user.city }} - {{ user.uf }}</p>
