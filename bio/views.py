@@ -20,6 +20,9 @@ def home(request):
 def contents(request):
     return render(request, 'contents.html')
 
+def patners(request):
+    return render(request, 'patners.html')
+
 def privacy(request):
     return render(request, 'privacy.html')
 

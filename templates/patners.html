@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="nav-content">
+        <div class="content">
+            <div class="card card-content" style="width: 50rem;">
+                <div class="card-body card-body-content">
+                    <h5 class="card-title">Dr.CATADOR - COLETA E COMPOSTAGEM URBANA</h5>
+                    <img src="/static/images/dr-catador.jpg" alt="Logo do Dr.Catador">
+                    <p class="card-text">Roberto Guião Jr., Dsc. em resíduos pela Coppe /UFRJ e 
+                        Univ. de Dresden/Alemanha, 
+                        decidiu "catar" resíduos orgânicos de porta em porta
+                        e transforma-los em adubo e educação ambiental, pois não existem
+                        políticas públicas que o façam ! </p>
+                    <a href="...">https://www.drcatador.com/</a>
+                </div>
+            </div>
+            <div class="card card-content" style="width: 50rem;">
+                <div class="card-body card-body-content">
+                    <h5 class="card-title">ÓLEOLOCAL - COLETA SELETIVA</h5>
+                    <img src="/static/images/oleo-Local.jpg" alt="Logo da ÓleoLocal">
+                    <p class="card-text">
+                        Atuamos no setor de reciclagem desde 2010, oferecendo um serviço inteligente e responsável de coleta seletiva de óleo de cozinha usado, contribuindo diariamente para a preservação do meio ambiente. Com frota própria, equipe treinada para manuseio e recolhimento deste resíduo, vários pontos de coleta distribuídos estrategicamente pela região, atendemos inúmeras fontes geradoras.</p>
+                    <a href="...">https://oleolocal.com.br/</a>
+                </div>
+            </div>
+        </div>
+        <div id="list-example" class="list-group nav-content-group">
+            <h5>Está gostando? Confira nossas redes para mais conteúdos</h5>
+            <span class="icons">
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-youtube"></i></a>
+                <a href="#"><i class="bi bi-twitter"></i></a>
+                <a href="#"><i class="bi bi-facebook"></i></a>
+            </span>
+            <br>
+            <br>
+            <h5>Categorias</h5>
+            <form action="">
+                <input type="radio"> Videos
+                <br>
+                <input type="radio"> Materias
+            </form>
+        </div>
+    </div>    
+{% endblock %}

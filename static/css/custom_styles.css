@@ -65,18 +65,20 @@
 .services{
     display: flex;
     flex-direction: column;
-    gap: 150px;
+    gap: 100px;
     margin: 150px 100px;
 }
 
 .services .content{
     display: flex;
-    gap: 100px;
+    width: 100%;
+    flex-direction: row;
 }
 
 .services .content img{
     border-radius: 50%;
     width: 200px;
+    height: 200px;
 }
 
 /**********************/
@@ -442,3 +444,9 @@
 .content .card-content iframe{
     margin: auto;
 }
+
+
+/**********************/
+/*       Patners      */
+/**********************/
+
