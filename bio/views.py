@@ -17,6 +17,8 @@ def home(request):
 
     return render(request, 'home.html', {'users': count_user, 'liters_oil': int(count_liters), 'liters_water': count_water})
 
+def contents(request):
+    return render(request, 'contents.html')
 
 def privacy(request):
     return render(request, 'privacy.html')

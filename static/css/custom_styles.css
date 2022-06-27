@@ -396,3 +396,49 @@
         width:100%!important;
     }
 }
+
+/**********************/
+/*      Contents      */
+/**********************/
+
+.nav-content{
+    display: flex;
+    
+    padding: 75px 0;
+}
+
+.nav-content .nav-content-group{
+    width: 25%;
+    height: 500px;
+    border: rgba(0,0,0,.125) solid 1px;
+    border-radius: 50px;
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.215);
+    background-color: rgba(0, 0, 0, 0.025);
+    padding: 50px 50px;
+}
+
+.nav-content .nav-content-group .icons i{
+    color: black;
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.content{    
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    width: 70%;
+    padding: 0px 100px;
+}
+
+.content .card-content{
+    padding: 50px 0;
+    border-radius: 50px;
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.215);
+    background-color: rgba(0, 0, 0, 0.025);
+    text-align: center;
+}
+
+.content .card-content iframe{
+    margin: auto;
+}
